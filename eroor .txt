@@ -1,0 +1,302 @@
+2025-Oct-29 02:56:17.722896
+#12 [8/8] RUN useradd -m appuser     && mkdir -p /home/appuser/.insightface /app/upload     && chown -R appuser:appuser /home/appuser /app
+2025-Oct-29 02:56:17.722896
+#12 DONE 0.1s
+2025-Oct-29 02:56:17.884436
+#13 exporting to image
+2025-Oct-29 02:56:17.884436
+#13 exporting layers
+2025-Oct-29 02:56:23.275805
+#13 exporting layers 5.5s done
+2025-Oct-29 02:56:23.299689
+#13 writing image sha256:ae4bbcf90bfdbcdc247294ba47d8c661c208d6bc82c0ba7271e5c8fa5bfdf6b2 done
+2025-Oct-29 02:56:23.299689
+#13 naming to docker.io/library/usgoccoo844s8ocsscgg4okc:28cc318b68dbc01e05df179a1003c2a487d4a8b6 done
+2025-Oct-29 02:56:23.299689
+#13 DONE 5.6s
+2025-Oct-29 02:56:23.305663
+1 warning found (use docker --debug to expand):
+2025-Oct-29 02:56:23.305663
+- JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 61)
+2025-Oct-29 02:56:23.327122
+Building docker image completed.
+2025-Oct-29 02:56:23.340304
+----------------------------------------
+2025-Oct-29 02:56:23.348219
+Rolling update started.
+2025-Oct-29 02:56:23.943939
+[CMD]: docker exec ik8g8sg8ws448w40s8cs4koc bash -c 'SOURCE_COMMIT=28cc318b68dbc01e05df179a1003c2a487d4a8b6 COOLIFY_URL=https://app.appfastway.com COOLIFY_FQDN=app.appfastway.com COOLIFY_BRANCH=main COOLIFY_RESOURCE_UUID=usgoccoo844s8ocsscgg4okc COOLIFY_CONTAINER_NAME=usgoccoo844s8ocsscgg4okc-025504252315  docker compose --project-name usgoccoo844s8ocsscgg4okc --project-directory /artifacts/ik8g8sg8ws448w40s8cs4koc/backend -f /artifacts/ik8g8sg8ws448w40s8cs4koc/backend/docker-compose.yaml up --build -d'
+2025-Oct-29 02:56:23.943939
+time="2025-10-29T02:56:23Z" level=warning msg="Found orphan containers ([usgoccoo844s8ocsscgg4okc-173409673173]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+2025-Oct-29 02:56:23.955402
+Container usgoccoo844s8ocsscgg4okc-025504252315  Creating
+2025-Oct-29 02:56:24.013016
+usgoccoo844s8ocsscgg4okc-025504252315 Your kernel does not support memory swappiness capabilities or the cgroup is not mounted. Memory swappiness discarded.
+2025-Oct-29 02:56:24.022777
+Container usgoccoo844s8ocsscgg4okc-025504252315  Created
+2025-Oct-29 02:56:24.022777
+Container usgoccoo844s8ocsscgg4okc-025504252315  Starting
+2025-Oct-29 02:56:24.326979
+Container usgoccoo844s8ocsscgg4okc-025504252315  Started
+2025-Oct-29 02:56:24.373349
+New container started.
+2025-Oct-29 02:56:24.392822
+Custom healthcheck found, skipping default healthcheck.
+2025-Oct-29 02:56:24.405107
+Waiting for healthcheck to pass on the new container.
+2025-Oct-29 02:56:24.415301
+Waiting for the start period (15 seconds) before starting healthcheck.
+2025-Oct-29 02:56:39.899511
+[CMD]: docker inspect --format='{{json .State.Health.Status}}' usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:56:39.899511
+"starting"
+2025-Oct-29 02:56:40.318673
+[CMD]: docker inspect --format='{{json .State.Health.Log}}' usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:56:40.318673
+[]
+2025-Oct-29 02:56:40.335855
+Attempt 1 of 3 | Healthcheck status: "starting"
+2025-Oct-29 02:57:10.663512
+[CMD]: docker inspect --format='{{json .State.Health.Status}}' usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:57:10.663512
+"unhealthy"
+2025-Oct-29 02:57:10.974912
+[CMD]: docker inspect --format='{{json .State.Health.Log}}' usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:57:10.974912
+[]
+2025-Oct-29 02:57:10.987346
+Attempt 2 of 3 | Healthcheck status: "unhealthy"
+2025-Oct-29 02:57:10.996465
+----------------------------------------
+2025-Oct-29 02:57:11.005736
+Container logs:
+2025-Oct-29 02:57:11.321497
+[CMD]: docker logs -n 100 usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-Oct-29 02:57:11.321497
+self.wsgi = self.app.wsgi()
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-Oct-29 02:57:11.321497
+self.callable = self.load()
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-Oct-29 02:57:11.321497
+return self.load_wsgiapp()
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-Oct-29 02:57:11.321497
+return util.import_app(self.app_uri)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-Oct-29 02:57:11.321497
+mod = importlib.import_module(module)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-Oct-29 02:57:11.321497
+return _bootstrap._gcd_import(name[level:], package, level)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-Oct-29 02:57:11.321497
+File "/app/app/main.py", line 10, in <module>
+2025-Oct-29 02:57:11.321497
+from app.marcacion.controller import router as marcacion_router
+2025-Oct-29 02:57:11.321497
+File "/app/app/marcacion/controller.py", line 17, in <module>
+2025-Oct-29 02:57:11.321497
+from app.core.config import settings
+2025-Oct-29 02:57:11.321497
+File "/app/app/core/config.py", line 11, in <module>
+2025-Oct-29 02:57:11.321497
+from pydantic import BaseSettings  # type: ignore
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/pydantic/__init__.py", line 426, in __getattr__
+2025-Oct-29 02:57:11.321497
+return _getattr_migration(attr_name)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/pydantic/_migration.py", line 296, in wrapper
+2025-Oct-29 02:57:11.321497
+raise PydanticImportError(
+2025-Oct-29 02:57:11.321497
+pydantic.errors.PydanticImportError: `BaseSettings` has been moved to the `pydantic-settings` package. See https://docs.pydantic.dev/2.11/migration/#basesettings-has-moved-to-pydantic-settings for more details.
+2025-Oct-29 02:57:11.321497
+2025-Oct-29 02:57:11.321497
+For further information visit https://errors.pydantic.dev/2.11/u/import-error
+2025-Oct-29 02:57:11.321497
+[2025-10-28 21:57:00 -0500] [9] [INFO] Worker exiting (pid: 9)
+2025-Oct-29 02:57:11.321497
+[2025-10-28 21:57:00 -0500] [10] [ERROR] Exception in worker process
+2025-Oct-29 02:57:11.321497
+Traceback (most recent call last):
+2025-Oct-29 02:57:11.321497
+File "/app/app/core/config.py", line 8, in <module>
+2025-Oct-29 02:57:11.321497
+from pydantic_settings import BaseSettings, SettingsConfigDict  # v2
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+ModuleNotFoundError: No module named 'pydantic_settings'
+2025-Oct-29 02:57:11.321497
+2025-Oct-29 02:57:11.321497
+During handling of the above exception, another exception occurred:
+2025-Oct-29 02:57:11.321497
+2025-Oct-29 02:57:11.321497
+Traceback (most recent call last):
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-Oct-29 02:57:11.321497
+worker.init_process()
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/uvicorn/workers.py", line 75, in init_process
+2025-Oct-29 02:57:11.321497
+super().init_process()
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-Oct-29 02:57:11.321497
+self.load_wsgi()
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-Oct-29 02:57:11.321497
+self.wsgi = self.app.wsgi()
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-Oct-29 02:57:11.321497
+self.callable = self.load()
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-Oct-29 02:57:11.321497
+return self.load_wsgiapp()
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-Oct-29 02:57:11.321497
+return util.import_app(self.app_uri)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-Oct-29 02:57:11.321497
+mod = importlib.import_module(module)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-Oct-29 02:57:11.321497
+return _bootstrap._gcd_import(name[level:], package, level)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-Oct-29 02:57:11.321497
+File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-Oct-29 02:57:11.321497
+File "/app/app/main.py", line 10, in <module>
+2025-Oct-29 02:57:11.321497
+from app.marcacion.controller import router as marcacion_router
+2025-Oct-29 02:57:11.321497
+File "/app/app/marcacion/controller.py", line 17, in <module>
+2025-Oct-29 02:57:11.321497
+from app.core.config import settings
+2025-Oct-29 02:57:11.321497
+File "/app/app/core/config.py", line 11, in <module>
+2025-Oct-29 02:57:11.321497
+from pydantic import BaseSettings  # type: ignore
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/pydantic/__init__.py", line 426, in __getattr__
+2025-Oct-29 02:57:11.321497
+return _getattr_migration(attr_name)
+2025-Oct-29 02:57:11.321497
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-Oct-29 02:57:11.321497
+File "/usr/local/lib/python3.11/site-packages/pydantic/_migration.py", line 296, in wrapper
+2025-Oct-29 02:57:11.321497
+raise PydanticImportError(
+2025-Oct-29 02:57:11.321497
+pydantic.errors.PydanticImportError: `BaseSettings` has been moved to the `pydantic-settings` package. See https://docs.pydantic.dev/2.11/migration/#basesettings-has-moved-to-pydantic-settings for more details.
+2025-Oct-29 02:57:11.321497
+2025-Oct-29 02:57:11.321497
+For further information visit https://errors.pydantic.dev/2.11/u/import-error
+2025-Oct-29 02:57:11.321497
+[2025-10-28 21:57:00 -0500] [10] [INFO] Worker exiting (pid: 10)
+2025-Oct-29 02:57:11.321497
+[2025-10-28 21:57:00 -0500] [8] [ERROR] Worker (pid:10) exited with code 3
+2025-Oct-29 02:57:11.321497
+[2025-10-28 21:57:00 -0500] [8] [ERROR] Worker (pid:9) was sent SIGTERM!
+2025-Oct-29 02:57:11.321497
+[2025-10-28 21:57:00 -0500] [8] [ERROR] Shutting down: Master
+2025-Oct-29 02:57:11.321497
+[2025-10-28 21:57:00 -0500] [8] [ERROR] Reason: Worker failed to boot.
+2025-Oct-29 02:57:11.333160
+----------------------------------------
+2025-Oct-29 02:57:11.342109
+Removing old containers.
+2025-Oct-29 02:57:11.350755
+----------------------------------------
+2025-Oct-29 02:57:11.358408
+WARNING: Dockerfile or Docker Image based deployment detected. The healthcheck needs a curl or wget command to check the health of the application. Please make sure that it is available in the image or turn off healthcheck on Coolify's UI.
+2025-Oct-29 02:57:11.366052
+----------------------------------------
+2025-Oct-29 02:57:11.373641
+New container is not healthy, rolling back to the old container.
+2025-Oct-29 02:57:11.695222
+[CMD]: docker stop --time=30 usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:57:11.695222
+usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:57:12.010790
+[CMD]: docker rm -f usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:57:12.010790
+usgoccoo844s8ocsscgg4okc-025504252315
+2025-Oct-29 02:57:12.021131
+Rolling update completed.
+2025-Oct-29 02:57:12.955264
+Gracefully shutting down build container: ik8g8sg8ws448w40s8cs4koc
+2025-Oct-29 02:57:13.401729
+[CMD]: docker stop --time=30 ik8g8sg8ws448w40s8cs4koc
+2025-Oct-29 02:57:13.401729
+ik8g8sg8ws448w40s8cs4koc
+2025-Oct-29 02:57:13.805270
+[CMD]: docker rm -f ik8g8sg8ws448w40s8cs4koc
+2025-Oct-29 02:57:13.805270
+Error response from daemon: No such container: ik8g8sg8ws448w40s8cs4koc

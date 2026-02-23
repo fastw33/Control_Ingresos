@@ -1,0 +1,45 @@
+﻿# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# === Entorno virtual ===
+.venv/
+venv
+venv/
+.env
+.env.*
+
+# === Logs ===
+*.log
+*.out
+*.err
+
+# === Base de datos local (si usas sqlite para pruebas) ===
+*.db
+*.sqlite3
+
+# === Configuración/IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Compilados / builds ===
+build/
+dist/
+*.bak
+
+# === Otros ===
+.DS_Store
+Thumbs.db
+
+/upload
+

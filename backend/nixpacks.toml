@@ -1,0 +1,8 @@
+[phases.install]
+cmds = [
+  "python3 -m venv /opt/venv",
+  ". /opt/venv/bin/activate",
+  "python -m pip install --upgrade pip setuptools wheel",
+  "tr -d '\\r' < requirements.txt | sed '1s/^\\xEF\\xBB\\xBF//' | awk 'NF && $1 !~ /^#/' > /tmp/reqs.txt",
+  "pip install -r /tmp/reqs.txt"
+]
