@@ -39,5 +39,5 @@ ENV INSIGHTFACE_HOME=/home/appuser/.insightface \
 HEALTHCHECK --interval=30s --timeout=3s --start-period=15s --retries=3 \
     CMD curl -fsS "http://127.0.0.1:${PORT:-3000}/health" || exit 1
 
-# Arranque (formato shell como tu guía)
-CMD sh -c "gunicorn -k uvicorn.workers.UvicornWorker -w 2 -b 0.0.0.0:${PORT:-3000} --timeout 60 --keep-alive 5 app.main:app"
+# Un worker evita mantener dos copias del motor facial en el mismo contenedor.
+CMD sh -c "gunicorn -k uvicorn.workers.UvicornWorker -w 1 -b 0.0.0.0:${PORT:-3000} --timeout 60 --keep-alive 5 app.main:app"
