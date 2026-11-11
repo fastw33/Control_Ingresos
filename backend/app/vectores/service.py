@@ -13,7 +13,7 @@ from .schema import (
     VerificacionOut,
 )
 from .model import PersonalVectores
-from .Encoder import embedding_from_image_bytes 
+from .Encoder import embedding_from_image_file
 
 UMBRAL_COSENO = 0.33
 
@@ -72,20 +72,14 @@ def _embedding_from_upload(file: UploadFile) -> Optional[np.ndarray]:
         pass
 
     try:
-        image_bytes: bytes = file.file.read()
-    except Exception:
-        try:
-            file.file.seek(0)
-            image_bytes = file.file.read()
-        except Exception:
-            return None
+        # PIL puede leer el UploadFile directamente, incluso si está en disco.
+        vec = embedding_from_image_file(file.file)
     finally:
         try:
             file.file.seek(0)
         except Exception:
             pass
 
-    vec = embedding_from_image_bytes(image_bytes)
     if vec is None:
         return None
     # Normalizamos por seguridad (InsightFace ya entrega norm≈1)
