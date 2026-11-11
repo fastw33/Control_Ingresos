@@ -1,5 +1,6 @@
 # app/vectores/encoder.py
 from typing import Optional
+from threading import Lock
 import io
 import numpy as np
 from PIL import Image, ImageOps
@@ -9,17 +10,26 @@ import cv2
 from insightface.app import FaceAnalysis
 
 _APP: Optional[FaceAnalysis] = None
+_APP_LOCK = Lock()
 
 def _get_app() -> FaceAnalysis:
     """
     Inicializa y devuelve una instancia singleton de FaceAnalysis.
-    Usa el modelo por defecto 'buffalo_l' (512D, normalizado).
+    Conserva detección y reconocimiento de 'buffalo_l' (512D, normalizado).
     """
     global _APP
     if _APP is None:
-        _APP = FaceAnalysis(name="buffalo_l")
-        # ctx_id=0 -> CPU; det_size ajusta la resolución del detector
-        _APP.prepare(ctx_id=0, det_size=(640, 640))
+        with _APP_LOCK:
+            # Otra solicitud puede haber completado la carga mientras esperábamos.
+            if _APP is None:
+                app = FaceAnalysis(
+                    name="buffalo_l",
+                    allowed_modules=["detection", "recognition"],
+                )
+                # Conservamos la resolución y configuración de inferencia actuales.
+                app.prepare(ctx_id=0, det_size=(640, 640))
+                # Publicar solo después de preparar: un fallo permite reintentar.
+                _APP = app
     return _APP
 
 
